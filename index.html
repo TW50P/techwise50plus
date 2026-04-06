@@ -3,1600 +3,698 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stichting Techwise50plus | Digitale Geletterdheid voor 50+</title>
-    <meta name="description" content="Stichting Techwise50plus bevordert digitale geletterdheid en zelfstandigheid bij het gebruik van moderne technologie voor volwassenen van 50 jaar en ouder.">
+    <title>Stichting Techwise50plus Foundation | Digitale Vaardigheden voor 50+</title>
+    <meta name="description" content="Stichting Techwise50plus Foundation - Digitale vaardigheden en technologische kennis voor personen van 50 jaar en ouder.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Variables for smooth transitions */
         :root {
-            --scroll-progress: 0;
-            --font-family: 'Courier New', Courier, monospace;
-            --text-color: #000000;
-            --bg-color: #ffffff;
-            --accent-color: #000000;
-            --font-size: 16px;
-            --line-height: 1.6;
-            --spacing: 20px;
-            --border-style: none;
-            --text-decoration: none;
-            --font-weight: 400;
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --teal: #1a6b6b;
+            --gold: #d4a574;
+            --bg: #faf9f7;
+            --text: #2d3748;
+            --text-light: #4a5568;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family);
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: var(--line-height);
-            font-size: var(--font-size);
-            transition: background-color 0.8s ease, color 0.8s ease;
-            overflow-x: hidden;
-        }
-
-        /* Language Switcher */
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 10px;
-            opacity: var(--scroll-progress);
-            transition: opacity 0.5s ease;
-        }
-
-        .language-switcher button {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border: 1px solid var(--text-color);
-            padding: 8px 16px;
-            cursor: pointer;
-            font-family: var(--font-family);
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .language-switcher button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .language-switcher button.active {
-            background: #ff6b35;
-            color: white;
-            border-color: #ff6b35;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing);
-        }
-
-        /* Logo Section */
-        .logo-section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .logo {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 30px;
-        }
-
-        .tagline {
-            font-size: calc(18px + var(--scroll-progress) * 8px);
-            margin-top: 20px;
-            font-weight: var(--font-weight);
-            opacity: calc(0.7 + var(--scroll-progress) * 0.3);
-            transition: all 0.8s ease;
-        }
-
-        /* Main Title */
-        h1 {
-            font-size: calc(32px + var(--scroll-progress) * 16px);
-            margin-bottom: 20px;
-            font-weight: var(--font-weight);
-            text-decoration: var(--text-decoration);
-            transition: all 0.8s ease;
-        }
-
-        /* Section Styling */
-        section {
-            padding: calc(40px + var(--scroll-progress) * 40px) 20px;
-            margin-bottom: calc(20px + var(--scroll-progress) * 20px);
-            border: var(--border-style);
-            transition: all 0.8s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
-        section:nth-child(6) { animation-delay: 0.6s; }
-        section:nth-child(7) { animation-delay: 0.7s; }
-        section:nth-child(8) { animation-delay: 0.8s; }
-
-        h2 {
-            font-size: calc(24px + var(--scroll-progress) * 8px);
-            margin-bottom: calc(15px + var(--scroll-progress) * 10px);
-            color: var(--accent-color);
-            font-weight: var(--font-weight);
-            transition: all 0.8s ease;
-        }
-
-        h3 {
-            font-size: calc(18px + var(--scroll-progress) * 4px);
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-            font-weight: var(--font-weight);
-            transition: all 0.8s ease;
-        }
-
-        p, li {
-            margin-bottom: calc(10px + var(--scroll-progress) * 5px);
-            transition: all 0.8s ease;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-left: calc(0px + var(--scroll-progress) * 20px);
-            transition: all 0.8s ease;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            opacity: calc(0.8 + var(--scroll-progress) * 0.2);
-            transition: all 0.8s ease;
-        }
-
-        th, td {
-            padding: calc(10px + var(--scroll-progress) * 5px);
-            text-align: left;
-            border: 1px solid var(--text-color);
-            transition: all 0.8s ease;
-        }
-
-        th {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            font-weight: var(--font-weight);
-        }
-
-        tr:nth-child(even) {
-            background-color: rgba(255, 107, 53, calc(var(--scroll-progress) * 0.1));
-        }
-
-        /* Links */
-        a {
-            color: var(--accent-color);
-            text-decoration: underline;
-            transition: all 0.3s ease;
-        }
-
-        a:hover {
-            color: #ff6b35;
-            transform: translateX(calc(var(--scroll-progress) * 3px));
-            display: inline-block;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 18px; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
+        
+        /* Language Toggle - Fixed */
+        .lang-toggle { position: fixed; top: 20px; right: 20px; z-index: 1001; background: white; border-radius: 30px; padding: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; gap: 4px; }
+        .lang-btn { padding: 10px 18px; border: none; background: transparent; font-weight: 600; cursor: pointer; border-radius: 25px; transition: all 0.3s; }
+        .lang-btn.active { background: var(--primary); color: white; }
+        
+        /* Scroll Progress Bar */
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--gold) 100%); z-index: 10000; width: 0%; transition: width 0.1s; }
+        
+        /* Navigation - Always Visible */
+        nav { position: fixed; top: 4px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); z-index: 999; padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo { animation: logoPulse 2s ease-in-out infinite; }
+        .logo img { width: 70px; height: 70px; border-radius: 14px; object-fit: contain; background: transparent; transition: transform 0.6s ease; cursor: pointer; }
+        .logo:hover { animation: none; }
+        .logo:hover img { transform: rotateY(360deg) scale(1.15); }
+        @keyframes logoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .logo-text { font-size: 20px; font-weight: 700; color: var(--primary); }
+        
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.3s; font-size: 16px; }
+        .nav-links a:hover { color: var(--primary); background: rgba(255,107,53,0.1); }
+        
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; }
+        .hamburger span { width: 28px; height: 3px; background: var(--primary); border-radius: 3px; transition: 0.3s; }
+        
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 140px 24px 80px; background: linear-gradient(135deg, #faf9f7 0%, #fff5f0 50%, #faf3eb 100%); position: relative; overflow: hidden; }
+        .hero-content { text-align: center; max-width: 900px; z-index: 2; }
+        
+        .hero-logo { width: 280px; height: 280px; margin: 0 auto 40px; animation: logoIn 1s ease-out, logoFloat 3s ease-in-out infinite; perspective: 1000px; cursor: pointer; }
+        .hero-logo img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 15px 40px rgba(255,107,53,0.4)); border-radius: 24px; background: transparent; transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hero-logo:hover img { transform: rotateY(360deg) scale(1.2); }
+        @keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        
+        @keyframes logoIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--text); margin-bottom: 20px; }
+        .motto { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 600; color: var(--primary); margin-bottom: 24px; }
+        .hero-description { font-size: clamp(1.1rem, 2vw, 1.35rem); color: var(--text-light); max-width: 700px; margin: 0 auto 40px; }
+        
+        /* Sections */
+        section { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-tag { display: inline-block; padding: 8px 20px; background: rgba(255,107,53,0.1); color: var(--primary); border-radius: 20px; font-weight: 600; font-size: 0.95rem; margin-bottom: 16px; }
+        .section-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--text); margin-bottom: 16px; }
+        .section-subtitle { font-size: 1.15rem; color: var(--text-light); max-width: 700px; margin: 0 auto; }
+        
+        /* About */
+        .about { background: white; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        .about-content h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
+        .about-content p { margin-bottom: 20px; color: var(--text-light); }
+        .values-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .value-card { padding: 24px; background: var(--bg); border-radius: 16px; transition: all 0.3s; border: 2px solid transparent; }
+        .value-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .icon-box { width: 56px; height: 56px; background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-bottom: 16px; }
+        .value-card h4 { font-size: 1.15rem; color: var(--text); margin-bottom: 8px; }
+        .value-card p { font-size: 0.95rem; color: var(--text-light); margin: 0; }
+        
+        /* Board */
+        .board { background: linear-gradient(180deg, var(--bg) 0%, white 100%); }
+        .board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .board-card { background: white; border-radius: 16px; padding: 40px 32px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s; border: 2px solid transparent; }
+        .board-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+        .board-avatar { width: 100px; height: 100px; background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 40px; font-weight: 600; }
+        .board-role { display: inline-block; padding: 6px 16px; background: rgba(255,107,53,0.1); color: var(--primary); border-radius: 20px; font-weight: 600; font-size: 0.85rem; margin-bottom: 16px; }
+        .board-name { font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+        .notice-box { grid-column: 1 / -1; background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(212,165,116,0.05) 100%); border: 2px solid var(--primary); border-radius: 16px; padding: 32px; text-align: center; margin-top: 32px; }
+        .notice-box h4 { color: var(--primary); margin-bottom: 12px; font-size: 1.25rem; }
+        .notice-box p { color: var(--text-light); margin: 0; }
+        
+        /* Policy */
+        .policy-block { background: var(--bg); border-radius: 16px; padding: 40px; }
+        .policy-block h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.35rem; display: flex; align-items: center; gap: 12px; }
+        .policy-block ul { list-style: none; }
+        .policy-block li { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: flex-start; gap: 12px; }
+        .policy-block li:last-child { border-bottom: none; }
+        .policy-block li i { color: var(--primary); margin-top: 4px; }
+        .update-banner { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #f59e0b; border-radius: 16px; padding: 32px; text-align: center; }
+        .update-banner h4 { color: #92400e; margin-bottom: 8px; }
+        .update-banner p { color: #a16207; margin: 0; }
+        
+        /* Finance */
+        .finance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .finance-card { background: white; border-radius: 16px; padding: 40px 32px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .finance-icon { width: 72px; height: 72px; background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 28px; }
+        .finance-amount { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        
+        /* ANBI */
+        .anbi { background: var(--teal); color: white; }
+        .anbi .section-title, .anbi .section-subtitle { color: white; }
+        .anbi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        .anbi-card { background: rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; border: 1px solid rgba(255,255,255,0.2); }
+        .anbi-card h4 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 12px; }
+        .anbi-card p { font-size: 1.25rem; font-weight: 600; margin: 0; }
+        .anbi-card a { color: var(--gold); text-decoration: none; }
+        .anbi-status { grid-column: 1 / -1; background: rgba(255,255,255,0.15); border-radius: 16px; padding: 40px; text-align: center; border: 2px solid var(--gold); }
+        
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+        .contact-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+        .contact-icon { width: 48px; height: 48px; background: rgba(255,107,53,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 20px; flex-shrink: 0; }
+        .contact-item h4 { font-size: 1rem; color: var(--text-light); margin-bottom: 4px; font-weight: 500; }
+        .contact-item p { font-size: 1.1rem; color: var(--text); font-weight: 600; margin: 0; }
+        .contact-item a { color: var(--primary); text-decoration: none; }
+        .contact-form { background: var(--bg); border-radius: 16px; padding: 40px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px 18px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 1rem; font-family: inherit; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+        .submit-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+        
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-top: calc(1px + var(--scroll-progress) * 2px) solid var(--accent-color);
-            font-size: calc(14px + var(--scroll-progress) * 2px);
-            opacity: calc(0.7 + var(--scroll-progress) * 0.3);
-            transition: all 0.8s ease;
+        footer { background: #1a3a3a; color: white; padding: 64px 24px 32px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+        .footer-brand h3 { font-size: 1.5rem; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .footer-brand img { width: 50px; height: 50px; border-radius: 10px; background: transparent; transition: transform 0.6s ease; }
+        .footer-brand:hover img { transform: rotateY(360deg) scale(1.1); }
+        .footer-brand p { opacity: 0.8; margin-bottom: 8px; }
+        .footer-links h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--gold); }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.6; font-size: 0.9rem; }
+        
+        /* Language switching */
+        [data-lang="en"] { display: none; }
+        html[lang="en"] [data-lang="nl"] { display: none; }
+        html[lang="en"] [data-lang="en"] { display: block; }
+        html[lang="en"] [data-lang="en"].inline { display: inline; }
+        html[lang="en"] .lang-btn[data-set="nl"] { background: transparent; color: var(--text-light); }
+        html[lang="en"] .lang-btn[data-set="en"] { background: var(--primary); color: white; }
+        
+        /* Mobile menu */
+        .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: white; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 998; }
+        .mobile-menu.active { display: block; }
+        .mobile-menu ul { list-style: none; }
+        .mobile-menu li { margin-bottom: 16px; }
+        .mobile-menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
+        
+        @media (max-width: 1024px) {
+            .two-col, .contact-grid { grid-template-columns: 1fr; }
+            .board-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* Hidden language content */
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
-
-        /* Advanced Visual Effects for Evolved Sections */
-        .visual-card {
-            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,140,90,0.05) 100%);
-            border-radius: calc(0px + var(--scroll-progress) * 15px);
-            padding: calc(20px + var(--scroll-progress) * 20px);
-            margin: 20px 0;
-            border-left: calc(3px + var(--scroll-progress) * 2px) solid #ff6b35;
-            box-shadow: 0 calc(2px + var(--scroll-progress) * 8px) calc(4px + var(--scroll-progress) * 20px) rgba(255,107,53, calc(var(--scroll-progress) * 0.15));
-            transition: all 0.8s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .visual-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
-            opacity: var(--scroll-progress);
-            transition: all 0.8s ease;
-        }
-
-        .visual-card:hover {
-            transform: translateY(calc(var(--scroll-progress) * -5px));
-            box-shadow: 0 12px 30px rgba(255,107,53, 0.25);
-        }
-
-        /* Image Grid for Activities */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: calc(15px + var(--scroll-progress) * 15px);
-            margin: 30px 0;
-            opacity: calc(0.3 + var(--scroll-progress) * 0.7);
-            transition: all 0.8s ease;
-        }
-
-        .activity-card {
-            background: linear-gradient(135deg, #fff 0%, #fff5f0 100%);
-            border-radius: calc(0px + var(--scroll-progress) * 20px);
-            overflow: hidden;
-            box-shadow: 0 calc(2px + var(--scroll-progress) * 6px) calc(8px + var(--scroll-progress) * 20px) rgba(0,0,0, calc(0.05 + var(--scroll-progress) * 0.1));
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .activity-card:hover {
-            transform: translateY(-10px) scale(calc(1 + var(--scroll-progress) * 0.02));
-            box-shadow: 0 15px 40px rgba(255,107,53, 0.3);
-        }
-
-        .activity-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .activity-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(255,107,53,0.3) 100%);
-            opacity: calc(var(--scroll-progress) * 0.8);
-            transition: all 0.8s ease;
-        }
-
-        .activity-card:hover .activity-image::after {
-            opacity: 0.5;
-        }
-
-        .activity-content {
-            padding: calc(15px + var(--scroll-progress) * 10px);
-        }
-
-        .activity-title {
-            font-size: calc(16px + var(--scroll-progress) * 4px);
-            font-weight: calc(400 + var(--scroll-progress) * 300);
-            color: #ff6b35;
-            margin-bottom: 10px;
-            transition: all 0.8s ease;
-        }
-
-        .activity-description {
-            font-size: calc(14px + var(--scroll-progress) * 1px);
-            line-height: 1.6;
-            color: #555;
-            transition: all 0.8s ease;
-        }
-
-        /* Animated Icons/Graphics */
-        .icon-badge {
-            display: inline-block;
-            width: calc(40px + var(--scroll-progress) * 20px);
-            height: calc(40px + var(--scroll-progress) * 20px);
-            background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: calc(18px + var(--scroll-progress) * 8px);
-            color: white;
-            margin-right: 15px;
-            box-shadow: 0 4px 15px rgba(255,107,53, calc(var(--scroll-progress) * 0.4));
-            transition: all 0.8s ease;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Stats Counter */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: calc(15px + var(--scroll-progress) * 15px);
-            margin: 40px 0;
-            opacity: calc(0.4 + var(--scroll-progress) * 0.6);
-            transition: all 0.8s ease;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: calc(20px + var(--scroll-progress) * 20px);
-            background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(255,140,90,0.1) 100%);
-            border-radius: calc(0px + var(--scroll-progress) * 15px);
-            border: calc(1px + var(--scroll-progress) * 2px) solid rgba(255,107,53, calc(0.2 + var(--scroll-progress) * 0.3));
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .stat-box:hover::before {
-            left: 100%;
-        }
-
-        .stat-number {
-            font-size: calc(32px + var(--scroll-progress) * 16px);
-            font-weight: calc(400 + var(--scroll-progress) * 400);
-            color: #ff6b35;
-            margin-bottom: 10px;
-            transition: all 0.8s ease;
-        }
-
-        .stat-label {
-            font-size: calc(14px + var(--scroll-progress) * 2px);
-            color: #666;
-            transition: all 0.8s ease;
-        }
-
-        /* Parallax Background Elements */
-        .parallax-bg {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .parallax-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(255,107,53,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(255,140,90,0.08) 0%, transparent 50%);
-            opacity: var(--scroll-progress);
-            animation: parallaxFloat 20s ease-in-out infinite;
-            transition: opacity 0.8s ease;
-        }
-
-        @keyframes parallaxFloat {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(5deg); }
-            66% { transform: translate(-30px, 30px) rotate(-5deg); }
-        }
-
-        /* Interactive Timeline */
-        .timeline {
-            position: relative;
-            padding: 40px 0;
-            margin: 40px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: calc(20px + var(--scroll-progress) * 30px);
-            top: 0;
-            bottom: 0;
-            width: calc(2px + var(--scroll-progress) * 2px);
-            background: linear-gradient(180deg, #000 0%, #ff6b35 100%);
-            opacity: calc(0.3 + var(--scroll-progress) * 0.7);
-            transition: all 0.8s ease;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: calc(50px + var(--scroll-progress) * 30px);
-            margin-bottom: 30px;
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: slideInLeft 0.8s ease forwards;
-            transition: all 0.8s ease;
-        }
-
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-
-        @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: calc(12px + var(--scroll-progress) * 25px);
-            top: 5px;
-            width: calc(16px + var(--scroll-progress) * 8px);
-            height: calc(16px + var(--scroll-progress) * 8px);
-            background: #ff6b35;
-            border-radius: 50%;
-            border: calc(2px + var(--scroll-progress) * 2px) solid #fff;
-            box-shadow: 0 0 0 calc(2px + var(--scroll-progress) * 4px) rgba(255,107,53, 0.3);
-            transition: all 0.8s ease;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,53, 0.4); }
-            50% { box-shadow: 0 0 0 20px rgba(255,107,53, 0); }
-        }
-
-        /* Geometric Decorations */
-        .geometric-decoration {
-            position: absolute;
-            opacity: calc(var(--scroll-progress) * 0.1);
-            pointer-events: none;
-            transition: opacity 0.8s ease;
-        }
-
-        .geo-circle {
-            width: 200px;
-            height: 200px;
-            border: 3px solid #ff6b35;
-            border-radius: 50%;
-            top: 10%;
-            right: 5%;
-        }
-
-        .geo-square {
-            width: 150px;
-            height: 150px;
-            border: 3px solid #ff8c5a;
-            transform: rotate(45deg);
-            bottom: 15%;
-            left: 8%;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            h1 { font-size: calc(24px + var(--scroll-progress) * 8px); }
-            h2 { font-size: calc(20px + var(--scroll-progress) * 4px); }
-            .logo-section { min-height: 80vh; }
-            .image-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .timeline::before { left: 20px; }
-            .timeline-item { padding-left: 50px; }
-        }
-
-        /* Progress Indicator */
-        .scroll-progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: calc(2px + var(--scroll-progress) * 4px);
-            background: linear-gradient(90deg, #000000, #ff6b35);
-            width: calc(var(--scroll-progress) * 100%);
-            z-index: 999;
-            transition: all 0.3s ease;
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .values-grid { grid-template-columns: 1fr; }
+            .board-grid, .finance-grid, .anbi-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .hero { padding-top: 100px; }
+            .hero-logo { width: 150px; height: 150px; }
         }
     </style>
 </head>
 <body>
-    <div class="scroll-progress-bar"></div>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-set="nl" onclick="setLang('nl')">NL</button>
+        <button class="lang-btn" data-set="en" onclick="setLang('en')">EN</button>
+    </div>
     
-    <div class="language-switcher">
-        <button onclick="switchLanguage('nl')" class="active" id="btn-nl">NL</button>
-        <button onclick="switchLanguage('en')" id="btn-en">EN</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Techwise50plus Logo">
+                    <circle cx="150" cy="150" r="140" fill="#FF6B35"/>
+                    <g transform="translate(150, 75)">
+                        <path d="M-35 25 Q-35 -10 0 -10 Q35 -10 35 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M-25 25 Q-25 0 0 0 Q25 0 25 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M-15 25 Q-15 10 0 10 Q15 10 15 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="0" cy="32" r="6" fill="white"/>
+                    </g>
+                    <text x="150" y="190" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">TW50</text>
+                    <text x="150" y="235" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">+</text>
+                </svg>
+                <span class="logo-text">Techwise50plus</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#over" data-lang="nl">Over Ons</a><a href="#over" data-lang="en" style="display:none;">About</a></li>
+                <li><a href="#bestuur" data-lang="nl">Bestuur</a><a href="#bestuur" data-lang="en" style="display:none;">Board</a></li>
+                <li><a href="#beleid" data-lang="nl">Beleid</a><a href="#beleid" data-lang="en" style="display:none;">Policy</a></li>
+                <li><a href="#anbi" data-lang="nl">ANBI</a><a href="#anbi" data-lang="en" style="display:none;">ANBI</a></li>
+                <li><a href="#contact" data-lang="nl">Contact</a><a href="#contact" data-lang="en" style="display:none;">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#over" onclick="toggleMenu()" data-lang="nl">Over Ons</a><a href="#over" onclick="toggleMenu()" data-lang="en" style="display:none;">About</a></li>
+            <li><a href="#bestuur" onclick="toggleMenu()" data-lang="nl">Bestuur</a><a href="#bestuur" onclick="toggleMenu()" data-lang="en" style="display:none;">Board</a></li>
+            <li><a href="#beleid" onclick="toggleMenu()" data-lang="nl">Beleid</a><a href="#beleid" onclick="toggleMenu()" data-lang="en" style="display:none;">Policy</a></li>
+            <li><a href="#anbi" onclick="toggleMenu()" data-lang="nl">ANBI</a><a href="#anbi" onclick="toggleMenu()" data-lang="en" style="display:none;">ANBI</a></li>
+            <li><a href="#contact" onclick="toggleMenu()" data-lang="nl">Contact</a><a href="#contact" onclick="toggleMenu()" data-lang="en" style="display:none;">Contact</a></li>
+        </ul>
     </div>
-
-    <!-- DUTCH CONTENT -->
-    <div class="lang-content active" id="content-nl">
-        <div class="logo-section">
-            <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="evolveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#000000;stop-opacity:1">
-                            <animate attributeName="stop-color" values="#000000;#ff6b35;#000000" dur="3s" repeatCount="indefinite"/>
-                        </stop>
-                        <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1">
-                            <animate attributeName="stop-color" values="#ff6b35;#ff8c5a;#ff6b35" dur="3s" repeatCount="indefinite"/>
-                        </stop>
-                    </linearGradient>
-                    
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                
-                <!-- Animated circular background pulse -->
-                <circle cx="100" cy="100" r="80" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.3">
-                    <animate attributeName="r" values="70;90;70" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                
-                <!-- Main T letter with morphing effect -->
-                <g id="letterT">
-                    <!-- Horizontal bar -->
-                    <rect x="45" y="45" width="110" height="15" fill="url(#evolveGradient)" filter="url(#glow)">
-                        <animate attributeName="width" values="110;115;110" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="x" values="45;42.5;45" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                    <!-- Vertical bar -->
-                    <rect x="90" y="60" width="20" height="95" fill="url(#evolveGradient)" filter="url(#glow)">
-                        <animate attributeName="height" values="95;100;95" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                </g>
-                
-                <!-- Digital pixel evolution trail -->
-                <g id="pixelTrail">
-                    <rect x="30" y="175" width="8" height="8" fill="#000000" opacity="0.3">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" begin="0s"/>
-                    </rect>
-                    <rect x="45" y="175" width="8" height="8" fill="#333333" opacity="0.4">
-                        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.2s"/>
-                    </rect>
-                    <rect x="60" y="175" width="8" height="8" fill="#666666" opacity="0.5">
-                        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite" begin="0.4s"/>
-                    </rect>
-                    <rect x="75" y="175" width="8" height="8" fill="#999999" opacity="0.6">
-                        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.6s"/>
-                    </rect>
-                    <rect x="90" y="175" width="8" height="8" fill="#cc5533" opacity="0.7">
-                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" begin="0.8s"/>
-                    </rect>
-                    <rect x="105" y="175" width="8" height="8" fill="#ff6b35" opacity="0.8">
-                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1s"/>
-                    </rect>
-                    <rect x="120" y="175" width="8" height="8" fill="#ff8c5a" opacity="0.9">
-                        <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite" begin="1.2s"/>
-                    </rect>
-                </g>
-                
-                <!-- 50+ badge with pulse -->
-                <circle cx="150" cy="150" r="35" fill="#ff6b35" opacity="0.95">
-                    <animate attributeName="r" values="35;38;35" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="150" cy="150" r="35" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5">
-                    <animate attributeName="r" values="35;40;35" dur="2.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <text x="150" y="157" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
-                      fill="white" text-anchor="middle">50+</text>
-                
-                <!-- Tech particles floating around -->
-                <circle cx="30" cy="60" r="3" fill="#ff6b35" opacity="0.6">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 5,-5; 0,0" dur="3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="170" cy="80" r="2.5" fill="#ff8c5a" opacity="0.5">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; -4,4; 0,0" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="160" cy="40" r="2" fill="#ff6b35" opacity="0.4">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 3,6; 0,0" dur="3.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3.5s" repeatCount="indefinite"/>
-                </circle>
-            </svg>
-            
-            <h1>Stichting Techwise50plus</h1>
-            <p class="tagline">Elke stap telt in de digitale wereld</p>
-        </div>
-
-        <div class="container">
-            <section id="algemeen">
-                <h2>Algemene Informatie</h2>
-                <p><strong>Officiële naam:</strong> Stichting Techwise50plus</p>
-                <p><strong>RSIN nummer:</strong> [Wordt toegewezen na registratie]</p>
-                <p><strong>KvK nummer:</strong> [Wordt toegewezen na registratie]</p>
-                <p><strong>Statutaire zetel:</strong> Rotterdam, Nederland</p>
-                
-                <h3>Contactgegevens</h3>
-                <p><strong>Adres:</strong> Valkreek 40, 3079 AN Rotterdam, Nederland</p>
-                <p><strong>Telefoon:</strong> +40 744 775 772</p>
-                <p><strong>E-mail:</strong> info@techwise50plus.nl</p>
-                <p><strong>Website:</strong> www.techwise50plus.nl</p>
-            </section>
-
-            <section id="doelstelling">
-                <h2>Doelstelling</h2>
-                <p>Het doel van de Stichting is het bevorderen van digitale geletterdheid, praktische zelfstandigheid en vertrouwen in het gebruik van moderne technologie bij volwassenen, met een bijzondere focus op, maar niet beperkt tot, personen van 50 jaar en ouder.</p>
-                
-                <p>Bijzondere nadruk wordt gelegd op het veilige, verantwoorde en effectieve gebruik van digitale technologieën, waaronder kunstmatige intelligentie (AI) en gerelateerde toepassingen.</p>
-
-                <h3>Activiteiten</h3>
-                <p>De Stichting streeft haar doel na door onder meer:</p>
-                <ul>
-                    <li>Het organiseren van praktische workshops, trainingen, presentaties, educatieve evenementen en online webinars</li>
-                    <li>Het ontwikkelen, samenstellen en distribueren van educatief materiaal (presentaties, handleidingen, checklists, werkbladen, opnames)</li>
-                    <li>Het bieden van voorlichting over online beveiliging, gegevensbescherming en privacy, fraudepreventie, evenals het herkennen en beoordelen van desinformatie</li>
-                    <li>Het aangaan van partnerschappen met relevante organisaties, instellingen en netwerken</li>
-                    <li>Het verwerven van middelen door donaties, sponsoring, subsidies en andere legitieme bronnen</li>
-                </ul>
-            </section>
-
-            <section id="bestuur">
-                <h2>Bestuur</h2>
-                <p>Het bestuur van de Stichting bestaat uit ten minste drie (3) leden. Het huidige bestuur is als volgt samengesteld:</p>
-                
-                <table>
-                    <tr>
-                        <th>Naam</th>
-                        <th>Functie</th>
-                    </tr>
-                    <tr>
-                        <td>Gabriel George Oprișan</td>
-                        <td>Voorzitter</td>
-                    </tr>
-                    <tr>
-                        <td>Răzvan Iulian Buche</td>
-                        <td>Secretaris</td>
-                    </tr>
-                    <tr>
-                        <td>Mihail Marin</td>
-                        <td>Penningmeester</td>
-                    </tr>
-                </table>
-
-                <h3>Beloningsbeleid</h3>
-                <p>Aan de bestuursleden kan geen beloning worden toegekend. Gemaakte kosten worden aan de bestuursleden vergoed op vertoon van het nodige bewijs. Het bestuur opereert volledig op vrijwillige basis, waarbij de focus ligt op het realiseren van de doelstellingen van de Stichting.</p>
-            </section>
-
-            <section id="beleidsplan" class="parallax-bg">
-                <div class="geometric-decoration geo-circle"></div>
-                <div class="geometric-decoration geo-square"></div>
-                
-                <h2><span class="icon-badge">📋</span>Beleidsplan 2026</h2>
-                
-                <div class="visual-card">
-                    <h3>Visie en Missie</h3>
-                    <p>Stichting Techwise50plus gelooft dat digitale geletterdheid een fundamenteel recht is voor alle leeftijdsgroepen. Onze missie is om een veilige, ondersteunende leeromgeving te creëren waar volwassenen van 50 jaar en ouder met vertrouwen moderne technologie kunnen omarmen.</p>
+    
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="logo.png" alt="Techwise50plus Logo">
+                        <circle cx="150" cy="150" r="140" fill="#FF6B35"/>
+                        <g transform="translate(150, 75)">
+                            <path d="M-35 25 Q-35 -10 0 -10 Q35 -10 35 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M-25 25 Q-25 0 0 0 Q25 0 25 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M-15 25 Q-15 10 0 10 Q15 10 15 25" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="0" cy="32" r="6" fill="white"/>
+                        </g>
+                        <text x="150" y="190" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-2">TW50</text>
+                        <text x="150" y="235" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">+</text>
+                        <text x="150" y="265" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" fill="white" text-anchor="middle" letter-spacing="2" opacity="0.9">TECHWISE</text>
+                    </svg>
                 </div>
-
-                <h3><span class="icon-badge">🎯</span>Doelgroep</h3>
-                <p>Onze primaire doelgroep bestaat uit volwassenen van 50 jaar en ouder die hun digitale vaardigheden willen verbeteren. We richten ons op:</p>
-                
-                <div class="image-grid">
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="200" height="280" x="100" y="-40" rx="20" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="70" r="15" fill="white" opacity="0.3"/>
-                                <rect width="120" height="8" x="140" y="110" rx="4" fill="white" opacity="0.3"/>
-                                <rect width="140" height="8" x="130" y="130" rx="4" fill="white" opacity="0.3"/>
-                                <rect width="100" height="8" x="150" y="150" rx="4" fill="white" opacity="0.3"/>
-                                <text x="200" y="100" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">📱</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Smartphone & Tablet Basics</h4>
-                            <p class="activity-description">Leren omgaan met smartphones en tablets, van basisfuncties tot apps en veilig gebruik.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #4a90e2 0%, #5fa3ef 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="200" cy="100" r="60" fill="none" stroke="white" stroke-width="4" opacity="0.3"/>
-                                <circle cx="200" cy="100" r="45" fill="none" stroke="white" stroke-width="4" opacity="0.3"/>
-                                <rect width="30" height="40" x="185" y="80" rx="5" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="95" r="8" fill="white" opacity="0.3"/>
-                                <text x="200" y="110" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🔐</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Online Veiligheid</h4>
-                            <p class="activity-description">Bescherm jezelf tegen fraude, phishing en cybercriminaliteit met praktische tips en tools.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #9b59b6 0%, #b06cc7 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="150" cy="100" r="25" fill="white" opacity="0.2"/>
-                                <circle cx="250" cy="100" r="25" fill="white" opacity="0.2"/>
-                                <line x1="175" y1="100" x2="225" y2="100" stroke="white" stroke-width="3" opacity="0.3"/>
-                                <circle cx="200" cy="60" r="15" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="140" r="15" fill="white" opacity="0.2"/>
-                                <text x="200" y="115" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🤖</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">AI & Moderne Apps</h4>
-                            <p class="activity-description">Ontdek kunstmatige intelligentie en moderne applicaties die je dagelijks leven verrijken.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #27ae60 0%, #35c974 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 120 100 L 160 140 L 240 60" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.3"/>
-                                <circle cx="200" cy="100" r="70" fill="none" stroke="white" stroke-width="4" opacity="0.2"/>
-                                <text x="200" y="115" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🎯</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Digitale Zelfstandigheid</h4>
-                            <p class="activity-description">Word zelfverzekerd in de digitale wereld - van e-mail tot online banking en videobellen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><span class="icon-badge">📅</span>Activiteitenplan 2026</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q1: Januari - Maart</h4>
-                            <ul>
-                                <li>Oprichting en officiële registratie van de Stichting</li>
-                                <li>Aanvraag ANBI-status</li>
-                                <li>Ontwikkeling van eerste educatieve materialen</li>
-                                <li>Opzetten van online aanwezigheid (website, sociale media)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q2: April - Juni</h4>
-                            <ul>
-                                <li>Lancering van eerste pilot workshops (online en fysiek)</li>
-                                <li>Opbouwen van partnerschappen met lokale bibliotheken en gemeenschapscentra</li>
-                                <li>Ontwikkeling van handleidingen en instructievideos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q3: Juli - September</h4>
-                            <ul>
-                                <li>Uitbreiding van workshopprogramma</li>
-                                <li>Lancering van maandelijkse webinars</li>
-                                <li>Aanvraag van subsidies en fondsen</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q4: Oktober - December</h4>
-                            <ul>
-                                <li>Evaluatie en feedback van deelnemers</li>
-                                <li>Voorbereiding voor uitbreiding in 2027</li>
-                                <li>Jaarverslag en financiële rapportage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><span class="icon-badge">💰</span>Financieringsstrategie</h3>
-                <p>De Stichting zal haar activiteiten financieren door:</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-number">€2.000</div>
-                        <div class="stat-label">Individuele Donaties</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">€3.000</div>
-                        <div class="stat-label">Subsidies & Grants</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">€1.000</div>
-                        <div class="stat-label">Lokale Sponsoring</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Deelnemers (doel 2026)</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="begroting">
-                <h2>Begroting 2026</h2>
-                
-                <h3>Verwachte Inkomsten</h3>
-                <table>
-                    <tr>
-                        <th>Categorie</th>
-                        <th>Bedrag (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Individuele donaties</td>
-                        <td>2.000</td>
-                    </tr>
-                    <tr>
-                        <td>Subsidies en grants</td>
-                        <td>3.000</td>
-                    </tr>
-                    <tr>
-                        <td>Lokale sponsoring</td>
-                        <td>1.000</td>
-                    </tr>
-                    <tr>
-                        <td>Deelnemersbijdragen workshops</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <th>Totaal Inkomsten</th>
-                        <th>6.500</th>
-                    </tr>
-                </table>
-
-                <h3>Verwachte Uitgaven</h3>
-                <table>
-                    <tr>
-                        <th>Categorie</th>
-                        <th>Bedrag (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Educatieve materialen en software</td>
-                        <td>1.500</td>
-                    </tr>
-                    <tr>
-                        <td>Online platforms (website, webinars, e-mail)</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <td>Marketing en communicatie</td>
-                        <td>600</td>
-                    </tr>
-                    <tr>
-                        <td>Administratieve kosten (notaris, KvK, bankrekening)</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <td>Ruimtehuur voor workshops</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <td>Diverse en reservering</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <th>Totaal Uitgaven</th>
-                        <th>5.000</th>
-                    </tr>
-                </table>
-
-                <h3>Resultaat</h3>
-                <table>
-                    <tr>
-                        <th>Omschrijving</th>
-                        <th>Bedrag (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Verwacht overschot 2026</td>
-                        <td>1.500</td>
-                    </tr>
-                </table>
-                
-                <p><em>Het verwachte overschot zal worden gereserveerd voor de uitbreiding van activiteiten in 2027.</em></p>
-            </section>
-
-            <section id="financien">
-                <h2>Financiële Verantwoording</h2>
-                
-                <h3>Boekjaar</h3>
-                <p>Het boekjaar van de Stichting valt samen met het kalenderjaar (1 januari - 31 december).</p>
-
-                <p>Het eerste boekjaar van de Stichting eindigt op 31 december 2026.</p>
-
-                <h3>Jaarrekening</h3>
-                <p>De jaarrekening wordt jaarlijks binnen zes maanden na afloop van het boekjaar opgesteld en door het bestuur vastgesteld. De jaarrekening omvat:</p>
-                <ul>
-                    <li>Balans</li>
-                    <li>Staat van baten en lasten</li>
-                    <li>Toelichting op de cijfers</li>
-                </ul>
-
-                <p>De jaarrekening 2026 zal na vaststelling op deze website worden gepubliceerd (uiterlijk 30 juni 2027).</p>
-
-                <h3>Vermogen</h3>
-                <p>Het vermogen van de Stichting wordt gevormd door:</p>
-                <ul>
-                    <li>Subsidies en andere bijdragen</li>
-                    <li>Giften, legaten en erfstellingen</li>
-                    <li>Alle andere verkrijgingen en baten</li>
-                </ul>
-
-                <p>De Stichting houdt haar vermogen beperkt tot wat redelijkerwijs nodig is voor de werkzaamheden. Eventuele reserves worden aangehouden voor de continuïteit van de organisatie en voor specifieke projecten.</p>
-
-                <h3>Besteding bij Opheffing</h3>
-                <p>Een eventueel positief liquidatiesaldo van de ontbonden Stichting wordt besteed ten behoeve van een organisatie met ANBI-status (algemeen nut beogende instelling) die vergelijkbare doelstellingen heeft als de Stichting, of ten behoeve van een buitenlandse organisatie die uitsluitend of vrijwel uitsluitend het algemeen nut beoogt en vergelijkbare doelstellingen heeft.</p>
-            </section>
-
-            <section id="anbi">
-                <h2>ANBI Status</h2>
-                <p>Stichting Techwise50plus zal direct na oprichting de ANBI-status aanvragen bij de Nederlandse Belastingdienst. Een ANBI (Algemeen Nut Beogende Instelling) is een organisatie die zich vrijwel geheel inzet voor het algemeen nut.</p>
-
-                <h3>Voordelen ANBI-status</h3>
-                <p><strong>Voor donateurs:</strong></p>
-                <ul>
-                    <li>Giften aan de Stichting zijn aftrekbaar van de inkomstenbelasting of vennootschapsbelasting</li>
-                    <li>Voorwaarden voor aftrek zijn te vinden op de website van de Belastingdienst</li>
-                </ul>
-
-                <p><strong>Voor de Stichting:</strong></p>
-                <ul>
-                    <li>Vrijstelling van schenk- en erfbelasting op ontvangen giften en legaten</li>
-                    <li>Verhoogd vertrouwen bij donateurs en subsidieverstrekkers</li>
-                    <li>Toegang tot bepaalde subsidies die alleen beschikbaar zijn voor ANBI's</li>
-                </ul>
-
-                <h3>ANBI Verplichtingen</h3>
-                <p>Als ANBI voldoet de Stichting aan de volgende verplichtingen:</p>
-                <ul>
-                    <li>Publicatie van vereiste informatie op deze website</li>
-                    <li>Minimaal 90% van de activiteiten is gericht op het algemeen nut</li>
-                    <li>Geen winstoogmerk</li>
-                    <li>Beperkte bezoldiging van bestuurders (geen beloning, alleen onkostenvergoeding)</li>
-                    <li>Beperkt vermogen (alleen wat redelijk nodig is voor de werkzaamheden)</li>
-                    <li>Goede administratie en jaarlijkse financiële verantwoording</li>
-                </ul>
-
-                <p><em>Zodra de ANBI-status is verleend, wordt het RSIN-nummer op deze website gepubliceerd.</em></p>
-            </section>
-
-            <section id="publicaties">
-                <h2>Publicaties</h2>
-                
-                <h3>Beschikbare Documenten</h3>
-                <p>In overeenstemming met de ANBI-publicatieplicht zijn de volgende documenten beschikbaar:</p>
-                <ul>
-                    <li><strong>Statuten:</strong> [Beschikbaar na notariële oprichting - februari 2026]</li>
-                    <li><strong>Beleidsplan 2026:</strong> [Zie sectie hierboven]</li>
-                    <li><strong>Begroting 2026:</strong> [Zie sectie hierboven]</li>
-                    <li><strong>Jaarrekening 2026:</strong> [Wordt gepubliceerd uiterlijk 30 juni 2027]</li>
-                    <li><strong>Jaarverslag 2026:</strong> [Wordt gepubliceerd uiterlijk 30 juni 2027]</li>
-                </ul>
-
-                <h3>Toekomstige Publicaties</h3>
-                <p>Alle toekomstige jaarverslagen, jaarrekeningen en belangrijke beleidsdocumenten zullen op deze pagina worden gepubliceerd, in overeenstemming met de ANBI-vereisten.</p>
-            </section>
-
-            <footer>
-                <p>&copy; 2026 Stichting Techwise50plus | ANBI Status: [In aanvraag]</p>
-                <p>Alle rechten voorbehouden | Privacy- en cookieverklaring</p>
-                <p><em>Elke stap telt in de digitale wereld</em></p>
-            </footer>
-        </div>
-    </div>
-
-    <!-- ENGLISH CONTENT -->
-    <div class="lang-content" id="content-en">
-        <div class="logo-section">
-            <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="evolveGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#000000;stop-opacity:1">
-                            <animate attributeName="stop-color" values="#000000;#ff6b35;#000000" dur="3s" repeatCount="indefinite"/>
-                        </stop>
-                        <stop offset="100%" style="stop-color:#ff6b35;stop-opacity:1">
-                            <animate attributeName="stop-color" values="#ff6b35;#ff8c5a;#ff6b35" dur="3s" repeatCount="indefinite"/>
-                        </stop>
-                    </linearGradient>
-                    
-                    <filter id="glow2">
-                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-                
-                <circle cx="100" cy="100" r="80" fill="none" stroke="#ff6b35" stroke-width="2" opacity="0.3">
-                    <animate attributeName="r" values="70;90;70" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                
-                <g id="letterT2">
-                    <rect x="45" y="45" width="110" height="15" fill="url(#evolveGradient2)" filter="url(#glow2)">
-                        <animate attributeName="width" values="110;115;110" dur="3s" repeatCount="indefinite"/>
-                        <animate attributeName="x" values="45;42.5;45" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                    <rect x="90" y="60" width="20" height="95" fill="url(#evolveGradient2)" filter="url(#glow2)">
-                        <animate attributeName="height" values="95;100;95" dur="3s" repeatCount="indefinite"/>
-                    </rect>
-                </g>
-                
-                <g id="pixelTrail2">
-                    <rect x="30" y="175" width="8" height="8" fill="#000000" opacity="0.3">
-                        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" begin="0s"/>
-                    </rect>
-                    <rect x="45" y="175" width="8" height="8" fill="#333333" opacity="0.4">
-                        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" begin="0.2s"/>
-                    </rect>
-                    <rect x="60" y="175" width="8" height="8" fill="#666666" opacity="0.5">
-                        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite" begin="0.4s"/>
-                    </rect>
-                    <rect x="75" y="175" width="8" height="8" fill="#999999" opacity="0.6">
-                        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" begin="0.6s"/>
-                    </rect>
-                    <rect x="90" y="175" width="8" height="8" fill="#cc5533" opacity="0.7">
-                        <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" begin="0.8s"/>
-                    </rect>
-                    <rect x="105" y="175" width="8" height="8" fill="#ff6b35" opacity="0.8">
-                        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1s"/>
-                    </rect>
-                    <rect x="120" y="175" width="8" height="8" fill="#ff8c5a" opacity="0.9">
-                        <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite" begin="1.2s"/>
-                    </rect>
-                </g>
-                
-                <circle cx="150" cy="150" r="35" fill="#ff6b35" opacity="0.95">
-                    <animate attributeName="r" values="35;38;35" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="150" cy="150" r="35" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.5">
-                    <animate attributeName="r" values="35;40;35" dur="2.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0;0.5" dur="2.5s" repeatCount="indefinite"/>
-                </circle>
-                <text x="150" y="157" font-family="Arial, sans-serif" font-size="22" font-weight="bold" 
-                      fill="white" text-anchor="middle">50+</text>
-                
-                <circle cx="30" cy="60" r="3" fill="#ff6b35" opacity="0.6">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 5,-5; 0,0" dur="3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="170" cy="80" r="2.5" fill="#ff8c5a" opacity="0.5">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; -4,4; 0,0" dur="4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="4s" repeatCount="indefinite"/>
-                </circle>
-                <circle cx="160" cy="40" r="2" fill="#ff6b35" opacity="0.4">
-                    <animateTransform attributeName="transform" type="translate" 
-                        values="0,0; 3,6; 0,0" dur="3.5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3.5s" repeatCount="indefinite"/>
-                </circle>
-            </svg>
-            
-            <h1>Techwise50plus Foundation</h1>
-            <p class="tagline">Every step counts in the digital world</p>
-        </div>
-
-        <div class="container">
-            <section id="general-en">
-                <h2>General Information</h2>
-                <p><strong>Official name:</strong> Stichting Techwise50plus</p>
-                <p><strong>RSIN number:</strong> [To be assigned after registration]</p>
-                <p><strong>Chamber of Commerce number:</strong> [To be assigned after registration]</p>
-                <p><strong>Registered office:</strong> Rotterdam, The Netherlands</p>
-                
-                <h3>Contact Details</h3>
-                <p><strong>Address:</strong> Valkreek 40, 3079 AN Rotterdam, The Netherlands</p>
-                <p><strong>Phone:</strong> +40 744 775 772</p>
-                <p><strong>Email:</strong> info@techwise50plus.nl</p>
-                <p><strong>Website:</strong> www.techwise50plus.nl</p>
-            </section>
-
-            <section id="objectives-en">
-                <h2>Objectives</h2>
-                <p>The aim of the Foundation is to promote digital literacy, practical self-reliance and confidence in the use of modern technology among adults, with a particular focus on, but not limited to, persons aged 50 and older.</p>
-                
-                <p>Particular emphasis is placed on the safe, responsible and effective use of digital technologies, including artificial intelligence (AI) and related applications.</p>
-
-                <h3>Activities</h3>
-                <p>The Foundation seeks to achieve its purpose by, among other things:</p>
-                <ul>
-                    <li>Organizing hands-on workshops, trainings, presentations, educational events and online webinars</li>
-                    <li>Developing, compiling and distributing educational materials (presentations, manuals, checklists, worksheets, recordings)</li>
-                    <li>Providing education on online security, data protection and privacy, fraud prevention, as well as recognizing and assessing disinformation</li>
-                    <li>Establishing partnerships with relevant organizations, institutions and networks</li>
-                    <li>Acquiring funds through donations, sponsorships, grants and other legitimate sources</li>
-                </ul>
-            </section>
-
-            <section id="board-en">
-                <h2>Management Board</h2>
-                <p>The Management Board consists of at least three (3) members. The current board composition is as follows:</p>
-                
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                    </tr>
-                    <tr>
-                        <td>Gabriel George Oprișan</td>
-                        <td>Chairman</td>
-                    </tr>
-                    <tr>
-                        <td>Răzvan Iulian Buche</td>
-                        <td>Secretary</td>
-                    </tr>
-                    <tr>
-                        <td>Mihail Marin</td>
-                        <td>Treasurer</td>
-                    </tr>
-                </table>
-
-                <h3>Remuneration Policy</h3>
-                <p>No remuneration can be granted to the Management Board members. Expenses will be reimbursed to the Management Board members on production of the necessary proof. The board operates entirely on a voluntary basis, with the focus on achieving the Foundation's objectives.</p>
-            </section>
-
-            <section id="policy-en" class="parallax-bg">
-                <div class="geometric-decoration geo-circle"></div>
-                <div class="geometric-decoration geo-square"></div>
-                
-                <h2><span class="icon-badge">📋</span>Policy Plan 2026</h2>
-                
-                <div class="visual-card">
-                    <h3>Vision and Mission</h3>
-                    <p>Techwise50plus Foundation believes that digital literacy is a fundamental right for all age groups. Our mission is to create a safe, supportive learning environment where adults aged 50 and over can confidently embrace modern technology.</p>
-                </div>
-
-                <h3><span class="icon-badge">🎯</span>Target Group</h3>
-                <p>Our primary target group consists of adults aged 50 and over who want to improve their digital skills. We focus on:</p>
-                
-                <div class="image-grid">
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="200" height="280" x="100" y="-40" rx="20" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="70" r="15" fill="white" opacity="0.3"/>
-                                <rect width="120" height="8" x="140" y="110" rx="4" fill="white" opacity="0.3"/>
-                                <rect width="140" height="8" x="130" y="130" rx="4" fill="white" opacity="0.3"/>
-                                <rect width="100" height="8" x="150" y="150" rx="4" fill="white" opacity="0.3"/>
-                                <text x="200" y="100" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">📱</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Smartphone & Tablet Basics</h4>
-                            <p class="activity-description">Learn to use smartphones and tablets, from basic functions to apps and safe usage.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #4a90e2 0%, #5fa3ef 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="200" cy="100" r="60" fill="none" stroke="white" stroke-width="4" opacity="0.3"/>
-                                <circle cx="200" cy="100" r="45" fill="none" stroke="white" stroke-width="4" opacity="0.3"/>
-                                <rect width="30" height="40" x="185" y="80" rx="5" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="95" r="8" fill="white" opacity="0.3"/>
-                                <text x="200" y="110" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🔐</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Online Safety</h4>
-                            <p class="activity-description">Protect yourself from fraud, phishing and cybercrime with practical tips and tools.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #9b59b6 0%, #b06cc7 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="150" cy="100" r="25" fill="white" opacity="0.2"/>
-                                <circle cx="250" cy="100" r="25" fill="white" opacity="0.2"/>
-                                <line x1="175" y1="100" x2="225" y2="100" stroke="white" stroke-width="3" opacity="0.3"/>
-                                <circle cx="200" cy="60" r="15" fill="white" opacity="0.2"/>
-                                <circle cx="200" cy="140" r="15" fill="white" opacity="0.2"/>
-                                <text x="200" y="115" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🤖</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">AI & Modern Apps</h4>
-                            <p class="activity-description">Discover artificial intelligence and modern applications that enrich your daily life.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="activity-card">
-                        <div class="activity-image" style="background: linear-gradient(135deg, #27ae60 0%, #35c974 100%);">
-                            <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M 120 100 L 160 140 L 240 60" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.3"/>
-                                <circle cx="200" cy="100" r="70" fill="none" stroke="white" stroke-width="4" opacity="0.2"/>
-                                <text x="200" y="115" font-family="Arial" font-size="60" fill="white" text-anchor="middle" opacity="0.9">🎯</text>
-                            </svg>
-                        </div>
-                        <div class="activity-content">
-                            <h4 class="activity-title">Digital Independence</h4>
-                            <p class="activity-description">Become confident in the digital world - from email to online banking and video calling.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><span class="icon-badge">📅</span>Activity Plan 2026</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q1: January - March</h4>
-                            <ul>
-                                <li>Establishment and official registration of the Foundation</li>
-                                <li>Application for ANBI status</li>
-                                <li>Development of initial educational materials</li>
-                                <li>Setting up online presence (website, social media)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q2: April - June</h4>
-                            <ul>
-                                <li>Launch of first pilot workshops (online and in-person)</li>
-                                <li>Building partnerships with local libraries and community centers</li>
-                                <li>Development of manuals and instructional videos</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q3: July - September</h4>
-                            <ul>
-                                <li>Expansion of workshop program</li>
-                                <li>Launch of monthly webinars</li>
-                                <li>Application for grants and funding</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="visual-card">
-                            <h4>Q4: October - December</h4>
-                            <ul>
-                                <li>Evaluation and participant feedback</li>
-                                <li>Preparation for expansion in 2027</li>
-                                <li>Annual report and financial reporting</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <h3><span class="icon-badge">💰</span>Funding Strategy</h3>
-                <p>The Foundation will finance its activities through:</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-box">
-                        <div class="stat-number">€2,000</div>
-                        <div class="stat-label">Individual Donations</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">€3,000</div>
-                        <div class="stat-label">Grants & Subsidies</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">€1,000</div>
-                        <div class="stat-label">Local Sponsorship</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Participants (goal 2026)</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="budget-en">
-                <h2>Budget 2026</h2>
-                
-                <h3>Expected Income</h3>
-                <table>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Individual donations</td>
-                        <td>2,000</td>
-                    </tr>
-                    <tr>
-                        <td>Grants and subsidies</td>
-                        <td>3,000</td>
-                    </tr>
-                    <tr>
-                        <td>Local sponsorship</td>
-                        <td>1,000</td>
-                    </tr>
-                    <tr>
-                        <td>Workshop participant contributions</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <th>Total Income</th>
-                        <th>6,500</th>
-                    </tr>
-                </table>
-
-                <h3>Expected Expenses</h3>
-                <table>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Educational materials and software</td>
-                        <td>1,500</td>
-                    </tr>
-                    <tr>
-                        <td>Online platforms (website, webinars, email)</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <td>Marketing and communication</td>
-                        <td>600</td>
-                    </tr>
-                    <tr>
-                        <td>Administrative costs (notary, Chamber of Commerce, bank account)</td>
-                        <td>500</td>
-                    </tr>
-                    <tr>
-                        <td>Venue rental for workshops</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <td>Miscellaneous and reserves</td>
-                        <td>800</td>
-                    </tr>
-                    <tr>
-                        <th>Total Expenses</th>
-                        <th>5,000</th>
-                    </tr>
-                </table>
-
-                <h3>Result</h3>
-                <table>
-                    <tr>
-                        <th>Description</th>
-                        <th>Amount (€)</th>
-                    </tr>
-                    <tr>
-                        <td>Expected surplus 2026</td>
-                        <td>1,500</td>
-                    </tr>
-                </table>
-                
-                <p><em>The expected surplus will be reserved for the expansion of activities in 2027.</em></p>
-            </section>
-
-            <section id="financial-en">
-                <h2>Financial Accountability</h2>
-                
-                <h3>Financial Year</h3>
-                <p>The Foundation's financial year coincides with the calendar year (January 1 - December 31).</p>
-
-                <p>The Foundation's first financial year ends on December 31, 2026.</p>
-
-                <h3>Annual Accounts</h3>
-                <p>The annual accounts are prepared annually within six months after the end of the financial year and approved by the board. The annual accounts include:</p>
-                <ul>
-                    <li>Balance sheet</li>
-                    <li>Statement of income and expenditure</li>
-                    <li>Notes to the financial statements</li>
-                </ul>
-
-                <p>The 2026 annual accounts will be published on this website after approval (no later than June 30, 2027).</p>
-
-                <h3>Assets</h3>
-                <p>The Foundation's assets are formed by:</p>
-                <ul>
-                    <li>Subsidies and other contributions</li>
-                    <li>Gifts, bequests and legacies</li>
-                    <li>All other acquisitions and revenues</li>
-                </ul>
-
-                <p>The Foundation keeps its assets limited to what is reasonably necessary for its activities. Any reserves are maintained for the continuity of the organization and for specific projects.</p>
-
-                <h3>Distribution Upon Dissolution</h3>
-                <p>Any positive liquidation balance of the dissolved Foundation shall be spent for the benefit of an organization with ANBI status that has similar objectives as the Foundation, or for the benefit of a foreign organization that exclusively or almost exclusively intends the public benefit and has similar objectives.</p>
-            </section>
-
-            <section id="anbi-en">
-                <h2>ANBI Status</h2>
-                <p>Techwise50plus Foundation will apply for ANBI status with the Dutch Tax Administration immediately after incorporation. An ANBI (Public Benefit Organization) is an organization that is almost entirely committed to the public benefit.</p>
-
-                <h3>Benefits of ANBI Status</h3>
-                <p><strong>For donors:</strong></p>
-                <ul>
-                    <li>Donations to the Foundation are deductible from income tax or corporate tax</li>
-                    <li>Conditions for deduction can be found on the Tax Administration website</li>
-                </ul>
-
-                <p><strong>For the Foundation:</strong></p>
-                <ul>
-                    <li>Exemption from gift and inheritance tax on received gifts and bequests</li>
-                    <li>Increased trust among donors and grant providers</li>
-                    <li>Access to certain grants that are only available to ANBIs</li>
-                </ul>
-
-                <h3>ANBI Obligations</h3>
-                <p>As an ANBI, the Foundation meets the following obligations:</p>
-                <ul>
-                    <li>Publication of required information on this website</li>
-                    <li>At least 90% of activities are aimed at the public benefit</li>
-                    <li>No profit motive</li>
-                    <li>Limited remuneration of board members (no salary, only expense reimbursement)</li>
-                    <li>Limited assets (only what is reasonably necessary for activities)</li>
-                    <li>Good administration and annual financial accountability</li>
-                </ul>
-
-                <p><em>Once ANBI status is granted, the RSIN number will be published on this website.</em></p>
-            </section>
-
-            <section id="publications-en">
-                <h2>Publications</h2>
-                
-                <h3>Available Documents</h3>
-                <p>In accordance with ANBI publication requirements, the following documents are available:</p>
-                <ul>
-                    <li><strong>Articles of Association:</strong> [Available after notarial establishment - February 2026]</li>
-                    <li><strong>Policy Plan 2026:</strong> [See section above]</li>
-                    <li><strong>Budget 2026:</strong> [See section above]</li>
-                    <li><strong>Annual Accounts 2026:</strong> [To be published no later than June 30, 2027]</li>
-                    <li><strong>Annual Report 2026:</strong> [To be published no later than June 30, 2027]</li>
-                </ul>
-
-                <h3>Future Publications</h3>
-                <p>All future annual reports, annual accounts and important policy documents will be published on this page, in accordance with ANBI requirements.</p>
-            </section>
-
-            <footer>
-                <p>&copy; 2026 Techwise50plus Foundation | ANBI Status: [Application pending]</p>
-                <p>All rights reserved | Privacy and cookie statement</p>
-                <p><em>Every step counts in the digital world</em></p>
-            </footer>
-        </div>
-    </div>
-
-    <script>
-        // Scroll-based visual evolution
-        let lastScrollY = 0;
-        let ticking = false;
-
-        function updateScrollProgress() {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollProgress = Math.min(window.scrollY / scrollHeight, 1);
-            
-            // Update CSS variables for smooth transitions
-            document.documentElement.style.setProperty('--scroll-progress', scrollProgress);
-            
-            // Progressive typography evolution
-            if (scrollProgress < 0.2) {
-                document.documentElement.style.setProperty('--font-family', "'Courier New', Courier, monospace");
-                document.documentElement.style.setProperty('--text-color', '#000000');
-                document.documentElement.style.setProperty('--bg-color', '#ffffff');
-                document.documentElement.style.setProperty('--accent-color', '#000000');
-                document.documentElement.style.setProperty('--font-weight', '400');
-                document.documentElement.style.setProperty('--text-decoration', 'none');
-                document.documentElement.style.setProperty('--border-style', 'none');
-            } else if (scrollProgress < 0.4) {
-                document.documentElement.style.setProperty('--font-family', "'Georgia', serif");
-                document.documentElement.style.setProperty('--text-color', '#1a1a1a');
-                document.documentElement.style.setProperty('--bg-color', '#fafafa');
-                document.documentElement.style.setProperty('--accent-color', '#333333');
-                document.documentElement.style.setProperty('--font-weight', '400');
-                document.documentElement.style.setProperty('--border-style', '1px solid #ddd');
-            } else if (scrollProgress < 0.6) {
-                document.documentElement.style.setProperty('--font-family', "'Helvetica Neue', Arial, sans-serif");
-                document.documentElement.style.setProperty('--text-color', '#2c2c2c');
-                document.documentElement.style.setProperty('--bg-color', '#f5f5f5');
-                document.documentElement.style.setProperty('--accent-color', '#ff6b35');
-                document.documentElement.style.setProperty('--font-weight', '500');
-                document.documentElement.style.setProperty('--border-style', '2px solid #ff6b35');
-            } else if (scrollProgress < 0.8) {
-                document.documentElement.style.setProperty('--font-family', "'Segoe UI', Tahoma, sans-serif");
-                document.documentElement.style.setProperty('--text-color', '#1a1a2e');
-                document.documentElement.style.setProperty('--bg-color', '#fff5f0');
-                document.documentElement.style.setProperty('--accent-color', '#ff6b35');
-                document.documentElement.style.setProperty('--font-weight', '600');
-                document.documentElement.style.setProperty('--border-style', '3px solid #ff6b35');
-            } else {
-                document.documentElement.style.setProperty('--font-family', "'Inter', -apple-system, BlinkMacSystemFont, sans-serif");
-                document.documentElement.style.setProperty('--text-color', '#0f0f23');
-                document.documentElement.style.setProperty('--bg-color', 'linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%)');
-                document.documentElement.style.setProperty('--accent-color', '#ff6b35');
-                document.documentElement.style.setProperty('--font-weight', '700');
-                document.documentElement.style.setProperty('--text-decoration', 'none');
-                document.documentElement.style.setProperty('--border-style', '4px solid #ff6b35');
-                
-                // Advanced background for final stage
-                document.body.style.background = 'linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%)';
-            }
-            
-            ticking = false;
-        }
-
-        function requestTick() {
-            if (!ticking) {
-                window.requestAnimationFrame(updateScrollProgress);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestTick);
+                <h1 data-lang="nl">Stichting Techwise50plus Foundation</h1>
+                <h1 data-lang="en" style="display:none;">Techwise50plus Foundation</h1>
+                <p class="motto">"Stay Smart, Stay Connected"</p>
+                <p class="hero-description" data-lang="nl">Digitale vaardigheden en technologische kennis voor personen van 50 jaar en ouder. Empowering seniors in een steeds digitalere samenleving.</p>
+                <p class="hero-description" data-lang="en" style="display:none;">Digital skills and technological knowledge for people aged 50 and over. Empowering seniors in an increasingly digital society.</p>
+            </div>
+        </section>
         
-        // Initial call
-        updateScrollProgress();
-
-        // Language switcher
-        function switchLanguage(lang) {
-            // Hide all content
-            document.querySelectorAll('.lang-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            // Show selected language
-            document.getElementById('content-' + lang).classList.add('active');
+        <!-- About -->
+        <section id="over" class="about">
+            <div class="section-header">
+                <span class="section-tag" data-lang="nl">Over Ons</span>
+                <span class="section-tag" data-lang="en" style="display:none;">About Us</span>
+                <h2 class="section-title" data-lang="nl">Onze Missie & Visie</h2>
+                <h2 class="section-title" data-lang="en" style="display:none;">Our Mission & Vision</h2>
+            </div>
+            <div class="two-col">
+                <div class="about-content">
+                    <h3 data-lang="nl">Wie zijn wij?</h3>
+                    <h3 data-lang="en" style="display:none;">Who are we?</h3>
+                    <p data-lang="nl">Stichting Techwise50plus Foundation is opgericht op 10 maart 2026 met als doel het verkleinen van de digitale kloof voor senioren. Wij geloven dat iedereen, ongeacht leeftijd, moet kunnen participeren in onze digitale samenleving.</p>
+                    <p data-lang="en" style="display:none;">Techwise50plus Foundation was founded on March 10, 2026 with the goal of reducing the digital divide for seniors. We believe that everyone, regardless of age, should be able to participate in our digital society.</p>
+                    <p data-lang="nl">Door het aanbieden van toegankelijke IT-cursussen, individuele begeleiding en community-evenementen, helpen wij senioren om hun digitale vaardigheden te ontwikkelen en hun zelfstandigheid te behouden.</p>
+                    <p data-lang="en" style="display:none;">By offering accessible IT courses, individual guidance, and community events, we help seniors develop their digital skills and maintain their independence.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
+                        <h4 data-lang="nl">Educatie</h4>
+                        <h4 data-lang="en" style="display:none;">Education</h4>
+                        <p data-lang="nl">Praktische cursussen op maat</p>
+                        <p data-lang="en" style="display:none;">Practical tailored courses</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="icon-box"><i class="fas fa-hands-helping"></i></div>
+                        <h4 data-lang="nl">Mentoring</h4>
+                        <h4 data-lang="en" style="display:none;">Mentoring</h4>
+                        <p data-lang="nl">Persoonlijke begeleiding</p>
+                        <p data-lang="en" style="display:none;">Personal guidance</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="icon-box"><i class="fas fa-users"></i></div>
+                        <h4 data-lang="nl">Community</h4>
+                        <h4 data-lang="en" style="display:none;">Community</h4>
+                        <p data-lang="nl">Samen leren en groeien</p>
+                        <p data-lang="en" style="display:none;">Learning and growing together</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                        <h4 data-lang="nl">Veiligheid</h4>
+                        <h4 data-lang="en" style="display:none;">Safety</h4>
+                        <p data-lang="nl">Online veiligheid voorop</p>
+                        <p data-lang="en" style="display:none;">Online safety first</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Board -->
+        <section id="bestuur" class="board">
+            <div class="section-header">
+                <span class="section-tag" data-lang="nl">Bestuur</span>
+                <span class="section-tag" data-lang="en" style="display:none;">Board</span>
+                <h2 class="section-title" data-lang="nl">Ons Bestuur</h2>
+                <h2 class="section-title" data-lang="en" style="display:none;">Our Board</h2>
+                <p class="section-subtitle" data-lang="nl">Het bestuur bestaat uit 3 vrijwilligers die de stichting aansturen.</p>
+                <p class="section-subtitle" data-lang="en" style="display:none;">The board consists of 3 volunteers who guide the foundation.</p>
+            </div>
+            <div class="board-grid">
+                <div class="board-card">
+                    <div class="board-avatar">G</div>
+                    <span class="board-role" data-lang="nl">Voorzitter</span>
+                    <span class="board-role" data-lang="en" style="display:none;">Chairman</span>
+                    <h3 class="board-name">Gabriel George Oprișan</h3>
+                    <p style="color:var(--text-light);">Valkreek 40, 3079 AN Rotterdam</p>
+                </div>
+                <div class="board-card">
+                    <div class="board-avatar">B</div>
+                    <span class="board-role" data-lang="nl">Bestuurder</span>
+                    <span class="board-role" data-lang="en" style="display:none;">Board Member</span>
+                    <h3 class="board-name">Bogdan Buche</h3>
+                    <p style="color:var(--text-light);" data-lang="nl">Bestuurder</p>
+                    <p style="color:var(--text-light);display:none;" data-lang="en">Board Member</p>
+                </div>
+                <div class="board-card">
+                    <div class="board-avatar">M</div>
+                    <span class="board-role" data-lang="nl">Bestuurder</span>
+                    <span class="board-role" data-lang="en" style="display:none;">Board Member</span>
+                    <h3 class="board-name">Mihail Marin</h3>
+                    <p style="color:var(--text-light);">Stationsplein 9 K24C, 6512 AB Nijmegen</p>
+                </div>
+                <div class="notice-box">
+                    <i class="fas fa-info-circle" style="font-size:2rem;color:var(--primary);margin-bottom:16px;"></i>
+                    <h4 data-lang="nl">Beloningsbeleid</h4>
+                    <h4 data-lang="en" style="display:none;">Remuneration Policy</h4>
+                    <p data-lang="nl">Bestuursleden ontvangen <strong>geen beloning</strong> voor hun werkzaamheden. Alle activiteiten worden op vrijwillige basis uitgevoerd. Onkosten kunnen tegen kostprijs worden vergoed.</p>
+                    <p data-lang="en" style="display:none;">Board members receive <strong>no remuneration</strong> for their activities. All work is carried out on a voluntary basis. Expenses can be reimbursed at cost price.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Policy -->
+        <section id="beleid" class="policy" style="background:white;">
+            <div class="section-header">
+                <span class="section-tag" data-lang="nl">Beleid & Activiteiten</span>
+                <span class="section-tag" data-lang="en" style="display:none;">Policy & Activities</span>
+                <h2 class="section-title" data-lang="nl">Ons Beleidsplan</h2>
+                <h2 class="section-title" data-lang="en" style="display:none;">Our Policy Plan</h2>
+            </div>
+            <div class="two-col">
+                <div class="policy-block">
+                    <h3><i class="fas fa-bullseye"></i> <span data-lang="nl">Doelstelling</span><span data-lang="en" style="display:none;">Mission</span></h3>
+                    <p style="margin-bottom:20px;color:var(--text-light);" data-lang="nl">Het bevorderen van digitale vaardigheden en technologische kennis onder personen van 50 jaar en ouder, met als missie het verkleinen van de digitale kloof en het empoweren van senioren in een steeds digitalere samenleving.</p>
+                    <p style="margin-bottom:20px;color:var(--text-light);display:none;" data-lang="en">Promoting digital skills and technological knowledge among people aged 50 and over, with the mission of reducing the digital divide and empowering seniors in an increasingly digital society.</p>
+                    <h4 style="color:var(--primary);margin:24px 0 16px;" data-lang="nl">Activiteiten:</h4>
+                    <h4 style="color:var(--primary);margin:24px 0 16px;display:none;" data-lang="en">Activities:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="nl">Organiseren van IT-cursussen en workshops</span><span data-lang="en" style="display:none;">Organizing IT courses and workshops</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="nl">Individuele begeleiding en mentoring</span><span data-lang="en" style="display:none;">Individual guidance and mentoring</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="nl">Evenementen gericht op technologische educatie</span><span data-lang="en" style="display:none;">Events focused on technology education</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="nl">Ontwikkelen van lesmateriaal en handleidingen</span><span data-lang="en" style="display:none;">Developing teaching materials and guides</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang="nl">Samenwerken met gemeenten en welzijnsorganisaties</span><span data-lang="en" style="display:none;">Collaborating with municipalities and welfare organizations</span></li>
+                    </ul>
+                </div>
+                <div class="policy-block">
+                    <h3><i class="fas fa-chart-line"></i> <span data-lang="nl">Activiteitenverslag</span><span data-lang="en" style="display:none;">Activity Report</span></h3>
+                    <div class="update-banner">
+                        <i class="fas fa-sync-alt" style="font-size:2rem;color:#f59e0b;margin-bottom:16px;"></i>
+                        <h4 data-lang="nl">🔄 Dit onderdeel wordt binnenkort bijgewerkt</h4>
+                        <h4 data-lang="en" style="display:none;">🔄 This section will be updated soon</h4>
+                        <p data-lang="nl">De stichting is op 10 maart 2026 opgericht. Het eerste activiteitenverslag zal na afloop van het boekjaar 2026 worden gepubliceerd.</p>
+                        <p data-lang="en" style="display:none;">The foundation was founded on March 10, 2026. The first activity report will be published after the end of fiscal year 2026.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Finance -->
+        <section id="financien" class="finance" style="background:linear-gradient(180deg,white 0%,var(--bg) 100%);">
+            <div class="section-header">
+                <span class="section-tag" data-lang="nl">Financiën</span>
+                <span class="section-tag" data-lang="en" style="display:none;">Finances</span>
+                <h2 class="section-title" data-lang="nl">Financiële Verantwoording</h2>
+                <h2 class="section-title" data-lang="en" style="display:none;">Financial Accountability</h2>
+            </div>
+            <div class="finance-grid">
+                <div class="finance-card">
+                    <div class="finance-icon"><i class="fas fa-euro-sign"></i></div>
+                    <h3 data-lang="nl">Startkapitaal</h3>
+                    <h3 data-lang="en" style="display:none;">Starting Capital</h3>
+                    <p class="finance-amount">€ 0</p>
+                    <p style="color:var(--text-light);font-size:0.9rem;margin-top:8px;" data-lang="nl">Stichting zonder kapitaalvereiste</p>
+                    <p style="color:var(--text-light);font-size:0.9rem;margin-top:8px;display:none;" data-lang="en">Foundation without capital requirement</p>
+                </div>
+                <div class="finance-card">
+                    <div class="finance-icon"><i class="fas fa-donate"></i></div>
+                    <h3 data-lang="nl">Bronnen van Inkomen</h3>
+                    <h3 data-lang="en" style="display:none;">Sources of Income</h3>
+                    <p style="color:var(--text-light);margin-top:16px;" data-lang="nl">Donaties, subsidies (Erasmus+, Creative Europe), incidentele vergoedingen</p>
+                    <p style="color:var(--text-light);margin-top:16px;display:none;" data-lang="en">Donations, subsidies (Erasmus+, Creative Europe), incidental fees</p>
+                </div>
+                <div class="finance-card">
+                    <div class="finance-icon"><i class="fas fa-piggy-bank"></i></div>
+                    <h3 data-lang="nl">Bestemming Middelen</h3>
+                    <h3 data-lang="en" style="display:none;">Use of Resources</h3>
+                    <p style="color:var(--text-light);margin-top:16px;" data-lang="nl">Alle middelen worden uitsluitend aangewend ter verwezenlijking van de statutaire doelstellingen</p>
+                    <p style="color:var(--text-light);margin-top:16px;display:none;" data-lang="en">All resources are exclusively used to achieve the statutory objectives</p>
+                </div>
+                <div class="update-banner" style="grid-column:1/-1;margin-top:32px;">
+                    <i class="fas fa-sync-alt" style="font-size:2rem;color:#f59e0b;margin-bottom:16px;"></i>
+                    <h4 data-lang="nl">🔄 Jaarrekening 2026 wordt binnenkort gepubliceerd</h4>
+                    <h4 data-lang="en" style="display:none;">🔄 Annual accounts 2026 will be published soon</h4>
+                    <p data-lang="nl">De eerste jaarrekening zal na afloop van boekjaar 2026 (per 31 december 2026) worden opgesteld en hier gepubliceerd.</p>
+                    <p data-lang="en" style="display:none;">The first annual accounts will be prepared and published here after the end of fiscal year 2026 (as of December 31, 2026).</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ANBI -->
+        <section id="anbi" class="anbi">
+            <div class="section-header">
+                <span class="section-tag" style="background:rgba(255,255,255,0.2);color:white;">ANBI</span>
+                <h2 class="section-title">ANBI Status</h2>
+                <p class="section-subtitle" data-lang="nl">Transparantie en verantwoording staan bij ons voorop</p>
+                <p class="section-subtitle" data-lang="en" style="display:none;">Transparency and accountability are our priorities</p>
+            </div>
+            <div class="anbi-grid">
+                <div class="anbi-card">
+                    <h4>RSIN / Fiscaal Nummer</h4>
+                    <p>869271908</p>
+                </div>
+                <div class="anbi-card">
+                    <h4 data-lang="nl">KvK-nummer</h4>
+                    <h4 data-lang="en" style="display:none;">Chamber of Commerce</h4>
+                    <p>42010197</p>
+                </div>
+                <div class="anbi-card">
+                    <h4 data-lang="nl">Datum Oprichting</h4>
+                    <h4 data-lang="en" style="display:none;">Date of Establishment</h4>
+                    <p data-lang="nl">10 maart 2026</p>
+                    <p data-lang="en" style="display:none;">March 10, 2026</p>
+                </div>
+                <div class="anbi-card">
+                    <h4 data-lang="nl">ANBI Registratie</h4>
+                    <h4 data-lang="en" style="display:none;">ANBI Registration</h4>
+                    <p data-lang="nl">Aanvraag ingediend</p>
+                    <p data-lang="en" style="display:none;">Application submitted</p>
+                </div>
+                <div class="anbi-card">
+                    <h4 data-lang="nl">Notaris</h4>
+                    <h4 data-lang="en" style="display:none;">Notary</h4>
+                    <p>Isabel Haksteeg<br>Ambachtse Notaris</p>
+                </div>
+                <div class="anbi-card">
+                    <h4 data-lang="nl">Meer informatie</h4>
+                    <h4 data-lang="en" style="display:none;">More information</h4>
+                    <p><a href="https://www.anbi.nl/" target="_blank">www.anbi.nl <i class="fas fa-external-link-alt" style="font-size:0.8rem;"></i></a></p>
+                </div>
+                <div class="anbi-status">
+                    <i class="fas fa-check-circle" style="font-size:3rem;color:var(--gold);margin-bottom:20px;"></i>
+                    <h3 data-lang="nl">Wij voldoen aan alle ANBI-eisen</h3>
+                    <h3 data-lang="en" style="display:none;">We meet all ANBI requirements</h3>
+                    <p style="opacity:0.9;max-width:600px;margin:0 auto;line-height:1.8;" data-lang="nl">✅ Algemeen nut beoogd | ✅ Geen winstoogmerk | ✅ Transparantie | ✅ Onbetaald bestuur</p>
+                    <p style="opacity:0.9;max-width:600px;margin:0 auto;line-height:1.8;display:none;" data-lang="en">✅ Public benefit purpose | ✅ No profit motive | ✅ Transparency | ✅ Unpaid board</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact -->
+        <section id="contact" class="contact" style="background:white;">
+            <div class="section-header">
+                <span class="section-tag" data-lang="nl">Contact</span>
+                <span class="section-tag" data-lang="en" style="display:none;">Contact</span>
+                <h2 class="section-title" data-lang="nl">Neem Contact Op</h2>
+                <h2 class="section-title" data-lang="en" style="display:none;">Get in Touch</h2>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <h3 style="color:var(--primary);margin-bottom:24px;font-size:1.5rem;" data-lang="nl">Contactgegevens</h3>
+                    <h3 style="color:var(--primary);margin-bottom:24px;font-size:1.5rem;display:none;" data-lang="en">Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-building"></i></div>
+                        <div>
+                            <h4 data-lang="nl">Bezoekadres / Correspondentieadres</h4>
+                            <h4 data-lang="en" style="display:none;">Visiting Address / Mailing Address</h4>
+                            <p>Stichting Techwise50plus Foundation<br>Valkreek 40<br>3079 AN Rotterdam<br>Nederland</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:techwise50plus@gmail.com">techwise50plus@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4 data-lang="nl">Telefoon</h4>
+                            <h4 data-lang="en" style="display:none;">Phone</h4>
+                            <p>+31 6 [nummer]</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h4>Website</h4>
+                            <p><a href="https://techwise50plus.nl">techwise50plus.nl</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 style="color:var(--primary);margin-bottom:24px;font-size:1.5rem;" data-lang="nl">Stuur een bericht</h3>
+                    <h3 style="color:var(--primary);margin-bottom:24px;font-size:1.5rem;display:none;" data-lang="en">Send a message</h3>
+                    <form action="mailto:techwise50plus@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label data-lang="nl">Naam</label>
+                            <label data-lang="en" style="display:none;">Name</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="nl">Onderwerp</label>
+                            <label data-lang="en" style="display:none;">Subject</label>
+                            <input type="text" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label data-lang="nl">Bericht</label>
+                            <label data-lang="en" style="display:none;">Message</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-lang="nl">Verstuur bericht</button>
+                        <button type="submit" class="submit-btn" data-lang="en" style="display:none;">Send message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>
+                    <img src="logo.png" alt="Techwise50plus Logo" style="width:50px;height:50px;border-radius:10px;vertical-align:middle;margin-right:12px;">
+                    Techwise50plus
+                </h3>
+                <p style="opacity:0.8;margin-bottom:16px;">"Stay Smart, Stay Connected"</p>
+                <p style="opacity:0.6;font-size:0.9rem;" data-lang="nl">Een ANBI-geregistreerde stichting</p>
+                <p style="opacity:0.6;font-size:0.9rem;display:none;" data-lang="en">An ANBI-registered foundation</p>
+                <p style="opacity:0.6;font-size:0.9rem;">RSIN: 869271908 | KvK: 42010197</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-lang="nl">Snelle Links</h4>
+                <h4 data-lang="en" style="display:none;">Quick Links</h4>
+                <ul>
+                    <li><a href="#over" data-lang="nl">Over Ons</a><a href="#over" data-lang="en" style="display:none;">About</a></li>
+                    <li><a href="#bestuur" data-lang="nl">Bestuur</a><a href="#bestuur" data-lang="en" style="display:none;">Board</a></li>
+                    <li><a href="#beleid" data-lang="nl">Beleid</a><a href="#beleid" data-lang="en" style="display:none;">Policy</a></li>
+                    <li><a href="#anbi" data-lang="nl">ANBI</a><a href="#anbi" data-lang="en" style="display:none;">ANBI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 data-lang="nl">Contact</h4>
+                <h4 data-lang="en" style="display:none;">Contact</h4>
+                <ul>
+                    <li>Valkreek 40</li>
+                    <li>3079 AN Rotterdam</li>
+                    <li><a href="mailto:techwise50plus@gmail.com">techwise50plus@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 data-lang="nl">Taal</h4>
+                <h4 data-lang="en" style="display:none;">Language</h4>
+                <ul>
+                    <li><a href="#" onclick="setLang('nl');return false;" data-lang="nl">Nederlands</a><a href="#" onclick="setLang('nl');return false;" data-lang="en" style="display:none;">Dutch</a></li>
+                    <li><a href="#" onclick="setLang('en');return false;" data-lang="nl">English</a><a href="#" onclick="setLang('en');return false;" data-lang="en" style="display:none;">English</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stichting Techwise50plus Foundation | <span data-lang="nl">Alle rechten voorbehouden</span><span data-lang="en" style="display:none;">All rights reserved</span></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Language switching
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
             
             // Update buttons
-            document.querySelectorAll('.language-switcher button').forEach(btn => {
-                btn.classList.remove('active');
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.set === lang);
             });
-            document.getElementById('btn-' + lang).classList.add('active');
             
-            // Scroll to top smoothly
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Show/hide content
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const isMatch = el.dataset.lang === lang;
+                const tag = el.tagName.toLowerCase();
+                
+                if (tag === 'span' || tag === 'a' || tag === 'strong' || tag === 'em' || tag === 'i' || tag === 'b') {
+                    el.style.display = isMatch ? 'inline' : 'none';
+                } else if (tag === 'li') {
+                    el.style.display = isMatch ? 'list-item' : 'none';
+                } else {
+                    el.style.display = isMatch ? 'block' : 'none';
+                }
+            });
         }
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+        
+        // Initialize language
+        
+        // Scroll progress bar
+        window.addEventListener("scroll", () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        });
+        const savedLang = localStorage.getItem('lang') || 'nl';
+        setLang(savedLang);
+        
+        // Scroll animations using Intersection Observer
+        const observerOptions = { 
+            threshold: 0.1, 
+            rootMargin: '0px 0px -50px 0px' 
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe cards for animation
+        document.querySelectorAll('.value-card, .board-card, .finance-card, .policy-block, .anbi-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Add scrolled class to nav for styling
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
     </script>
 </body>
 </html>
